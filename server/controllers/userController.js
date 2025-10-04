@@ -45,8 +45,8 @@ const registerUser = async (req, res) => {
       });
     });
   } catch (error) {
-    console.error(error.message);
-    res.status(500).send('Server error');
+    console.error("Register error:", error);  // 👈 log full error, not just message
+  res.status(500).json({ message: "Server error", error: error.message });
   }
 };
 
