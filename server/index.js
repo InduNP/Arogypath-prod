@@ -1,5 +1,5 @@
 // server/index.js
-
+const cors = require("cors");
 const express = require('express');
 const dotenv = require('dotenv');
 const cors = require('cors');
@@ -15,7 +15,7 @@ connectDB();
 
 // Initialize Express app
 const app = express();
-
+app.use(cors());
 // Middleware
 app.use(cors()); // Enable Cross-Origin Resource Sharing
 app.use(express.json()); // Parse JSON request bodies
