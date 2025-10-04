@@ -16,9 +16,7 @@ connectDB();
 // Initialize Express app
 const app = express();
 // Middleware
-app.use(cors({
-  origin: 'http://localhost:5173/', 
-})); // Enable Cross-Origin Resource Sharing
+app.use(cors()); // Enable Cross-Origin Resource Sharing
 app.use(express.json()); // Parse JSON request bodies
 app.use(morgan('dev')); // Log HTTP requests in console
 

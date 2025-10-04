@@ -11,8 +11,7 @@ export default defineConfig({
     proxy: {
       // string shorthand: '/foo' -> 'http://localhost:4567/foo'
       '/api': {
-        target: 'http://arogypath-prod-production.up.railway.app/', // Your backend server address
-        // secure: false, // uncomment if you have issues with https
+        target: 'http://arogypath-prod-production.up.railway.app/'
       },
     },
   },
