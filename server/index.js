@@ -2,7 +2,7 @@
 const cors = require("cors");
 const express = require('express');
 const dotenv = require('dotenv');
-const cors = require('cors');
+
 const morgan = require('morgan');
 const path = require('path');
 const connectDB = require('./config/db');
@@ -15,9 +15,10 @@ connectDB();
 
 // Initialize Express app
 const app = express();
-app.use(cors());
 // Middleware
-app.use(cors()); // Enable Cross-Origin Resource Sharing
+app.use(cors({
+  origin: '*'
+})); // Enable Cross-Origin Resource Sharing
 app.use(express.json()); // Parse JSON request bodies
 app.use(morgan('dev')); // Log HTTP requests in console
 
