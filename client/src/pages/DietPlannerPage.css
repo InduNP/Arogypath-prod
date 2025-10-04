@@ -1,0 +1,262 @@
+/* client/src/pages/DietPlannerPage.css */
+
+.diet-planner-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2.5rem; 
+  background-color: #ffffff;
+  border-radius: 16px; /* More rounded */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12); /* Deeper, softer shadow */
+}
+
+.diet-planner-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem; 
+  color: #3D2B1F; 
+  font-size: 2rem; /* Slightly larger title */
+  font-weight: 700;
+}
+.intro-text {
+  text-align: center;
+  color: #555; /* Darkened for better contrast */
+  margin-bottom: 3rem; 
+  font-size: 1.1rem;
+}
+
+.questionnaire-form .question-block {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px dashed #e0e0e0; 
+}
+
+.questionnaire-form label {
+  display: block;
+  font-weight: 700; /* Bolder */
+  margin-bottom: 0.75rem;
+  color: #222; /* Darkened for better readability */
+  font-size: 1.1rem;
+}
+
+.options-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px; 
+}
+
+.option-button {
+  padding: 10px 20px;
+  font-size: 1rem; /* Slightly larger text */
+  background-color: #f7f7f7; 
+  border: 1px solid #d0d0d0;
+  border-radius: 25px; 
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  color: #444; /* Darkened text */
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.option-button:hover {
+  background-color: #e6e6e6;
+  border-color: #b0b0b0;
+}
+
+/* --- THEME COLOR CHANGE --- */
+.option-button.selected {
+  background-color: #556B2F; 
+  color: white;
+  border-color: #556B2F;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(85, 107, 47, 0.4);
+}
+.option-button.selected:hover {
+    background-color: #465a26; 
+    border-color: #465a26;
+}
+/* --- END THEME COLOR CHANGE --- */
+
+.question-block-inline {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  align-items: center;
+}
+.inline-field input {
+  width: 120px; 
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+.inline-field input:focus,
+textarea:focus {
+    border-color: #556B2F; /* Theme color on focus */
+    box-shadow: 0 0 0 1px #556B2F;
+    outline: none;
+}
+
+textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+  resize: vertical;
+  transition: border-color 0.2s ease;
+}
+
+.generate-section {
+  text-align: center;
+  margin-top: 3rem; 
+}
+
+/* --- PRIMARY ACTION BUTTON (Used for "Generate" and "Generate New Plan") --- */
+.generate-button {
+  padding: 14px 40px; 
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #556B2F; 
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(85, 107, 47, 0.5);
+  transition: all 0.2s ease;
+}
+
+.generate-button:hover {
+    background-color: #465a26; 
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(85, 107, 47, 0.6);
+}
+
+.generate-button:disabled {
+  background-color: #cccccc;
+  box-shadow: none;
+  cursor: not-allowed;
+  transform: translateY(0);
+}
+
+/* Error styles */
+.error-message {
+  color: #a00; 
+  background-color: #fff0f0; 
+  border: 1px solid #f0d0d0;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  margin: 1.5rem 0;
+  font-weight: 500;
+}
+
+/* --- RESULT SECTION STYLES (CRITICAL FOR TABLE RENDERING) --- */
+
+.diet-plan-result {
+  margin-top: 2rem;
+  padding: 2rem; 
+  background-color: #f9f9f9; /* Changed to a lighter grey for better table contrast */
+  border: 1px solid #e3e3e3;
+  border-radius: 12px;
+  /* Ensures the long table output wraps correctly */
+  overflow-x: auto; 
+}
+
+/* --- MARKDOWN TABLE STYLES (THE FIX FOR TABULAR OUTPUT) --- */
+
+.diet-plan-result table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  table-layout: fixed; /* Use 'fixed' to force columns to respect width */
+}
+
+/* Ensure borders and padding are applied to both header and data cells */
+.diet-plan-result th, 
+.diet-plan-result td {
+  border: 1px solid #e0e0e0 !important; /* Use !important temporarily to override any other conflicting styles */
+  padding: 12px 15px;
+  text-align: left;
+  vertical-align: top;
+  word-break: break-word; 
+  white-space: normal; /* CRITICAL: Allows content to wrap naturally */
+}
+
+.diet-plan-result th {
+  background-color: #e9f5e3; 
+  color: #465a26;
+  font-weight: 700;
+  border-bottom: 2px solid #556B2F !important;
+}
+
+/* --- END MARKDOWN TABLE STYLES --- */
+
+
+/* --- STYLES FOR RESULT ACTION BUTTONS (Matching React Component Names) --- */
+
+.result-actions {
+    display: flex;
+    justify-content: flex-end; 
+    gap: 15px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px dashed #e0e0e0;
+    align-items: center;
+}
+
+.download-button,
+.consult-experts-button {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    border: 2px solid #465a26;
+}
+
+/* 1. Download Button (Secondary, outlined) */
+.download-button {
+    background-color: white;
+    color: #465a26;
+    order: 1;
+}
+
+.download-button:hover {
+    background-color: #f0f0f0;
+    color: #335522;
+    border-color: #335522;
+}
+
+/* 2. Consult Experts Button (Link style) */
+.consult-experts-button {
+    background-color: transparent;
+    color: #465a26;
+    border: none; 
+    text-decoration: underline;
+    padding: 10px 5px;
+    font-weight: 500;
+    order: 2;
+}
+
+.consult-experts-button:hover {
+    color: #335522;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+/* 3. Generate New Plan button (Uses .generate-button styles defined above) */
+.result-actions .generate-button {
+    order: 3;
+    /* Adjust margin/padding slightly if needed for better alignment */
+    padding: 10px 20px; 
+    font-size: 1em; 
+}

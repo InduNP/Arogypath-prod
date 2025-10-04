@@ -1,0 +1,126 @@
+/* src/pages/LoginPage.css (FINAL - With Perfect Alignment & Glass Effect) */
+
+.login-page-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: calc(100vh - 70px);
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* --- THIS IS THE DEFINITIVE GLASSMORPHISM EFFECT --- */
+.login-form-card {
+  width: 100%;
+  max-width: 400px;
+  
+  /* 1. The Background: A subtle, semi-transparent white. */
+  background: rgba(255, 255, 255, 0.04);
+
+  /* 2. The Blur: A strong blur on the content behind the card. */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  
+  /* 3. The Border: A thin, light border to catch the light. */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  
+  /* 4. The Shadow: A soft, diffused shadow for depth. */
+  box-shadow: 0 8px 32px 0 rgba(1, 2, 20, 0.1);
+
+  padding: 3rem;
+  border-radius: 16px;
+}
+
+/* --- Text and Links --- */
+.login-form-card h2, 
+.register-link { 
+  text-align: center; 
+}
+.login-form-card h2 { 
+  margin: 0 0 2.5rem 0; 
+  font-size: 2.2rem; 
+  color: #3D2B1F; 
+  font-weight: bold; 
+}
+.error-message { 
+  color: #c0392b; 
+  text-align: center; 
+  margin-bottom: 1rem; 
+  font-weight: 500; 
+}
+
+/* --- The Alignment Fix --- */
+.form-group {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* This styles the input box */
+.form-group input {
+  width: 100%; 
+  padding: 14px 20px;
+  font-size: 1rem;
+  text-align: center;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  color: #3D2B1F;
+  transition: all 0.2s ease-in-out;
+}
+
+/* This styles the placeholder text itself */
+.form-group input::placeholder {
+  color: #5a4b40;
+  font-weight: 500;
+}
+
+/* When a user clicks into the box, align their typing to the left */
+.form-group input:focus {
+  outline: none;
+  text-align: left;
+  border-color: #556B2F;
+  background-color: white;
+  box-shadow: 0 0 0 2px rgba(85, 107, 47, 0.2);
+}
+
+/* --- Autofill Fix --- */
+.form-group input:-webkit-autofill,
+.form-group input:-webkit-autofill:hover,
+.form-group input:-webkit-autofill:focus,
+.form-group input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+    -webkit-text-fill-color: #3D2B1F !important;
+}
+
+/* --- Button --- */
+.login-button {
+  width: 100%;
+  padding: 14px;
+  background-color: #556B2F;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 1.5rem;
+}
+.login-button:hover {
+  background-color: #6B8E23;
+}
+
+/* --- Register Link --- */
+.register-link {
+  margin-top: 1.5rem;
+  color: #5a4b40;
+  font-size: 0.9rem;
+}
+.register-link a {
+  color: #556B2F;
+  font-weight: bold;
+  text-decoration: none;
+}

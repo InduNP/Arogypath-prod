@@ -1,0 +1,207 @@
+/* OUTER CONTAINER */
+.profile-page-container {
+    width: 90%;
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 25px 28px;
+    background: rgba(255, 255, 255, 0.15); /* glass effect */
+    border-radius: 16px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.07);
+    backdrop-filter: blur(12px) saturate(160%);
+    -webkit-backdrop-filter: blur(12px) saturate(160%);
+  }
+  
+  .profile-page-container h1 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: #3d4b24;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 8px;
+  }
+  
+  /* GRID */
+  .profile-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    align-items: start;
+  }
+  
+  /* CARD */
+  .card {
+    background: rgba(255, 255, 255, 0.25); /* glass */
+    border-radius: 14px;
+    padding: 18px 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    height: 100%;
+    backdrop-filter: blur(10px) saturate(180%);
+    -webkit-backdrop-filter: blur(10px) saturate(180%);
+  }
+  
+  .card h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #465a26;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    padding-bottom: 4px;
+  }
+  
+  /* PROFILE PICTURE */
+  .profile-picture-container {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #465a26;
+    margin: 0 auto 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-picture {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .camera-icon-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    color: #465a26;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-top: 5px;
+  }
+  
+  .camera-icon {
+    font-size: 1rem;
+    margin-bottom: 3px;
+  }
+  
+  /* STATS */
+  .stats-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .stats-grid div {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+  .stats-grid strong {
+    display: block;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-top: 4px;
+  }
+  
+  /* FORM */
+  .form-row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+  }
+  .form-row label {
+    font-weight: 600;
+    margin-bottom: 4px;
+    font-size: 0.85rem;
+    color: #444;
+  }
+  input,
+  select {
+    height: 34px;
+    padding: 5px 9px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    background: rgba(255, 255, 255, 0.7);
+    transition: all 0.2s ease;
+  }
+  input:focus,
+  select:focus {
+    outline: none;
+    border-color: #556b2f;
+    background: #fff;
+  }
+  .input-readonly {
+    background: rgba(240, 240, 240, 0.8);
+    color: #666;
+  }
+  
+  /* MOTIVATION CARD */
+  .motivation-card {
+    text-align: center;
+    font-style: italic;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.15)
+    );
+    color: #2f3e1c;
+    border-left: 4px solid #556b2f;
+  }
+  .motivation-card h3 {
+    border-bottom: none;
+    justify-content: center;
+  }
+  .motivation-card p {
+    margin-top: 8px;
+    font-weight: 500;
+  }
+  
+  /* BUTTON CENTERED */
+  .update-button-container {
+    grid-column: span 2;
+    text-align: center;
+    margin-top: 20px;
+  }
+  .update-button {
+    border: none;
+    color: #fff;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: #3d4b24;
+  }
+  .update-button:hover {
+    background: #556b2f;
+    transform: scale(1.02);
+  }
+  
+  .motivation-card {
+    text-align: center;
+    font-style: italic;
+    color: #333;
+  }
+  
+  .motivation-card hr {
+    margin: 12px 0;
+    border: none;
+    border-top: 1px dashed rgba(0, 0, 0, 0.2);
+  }
+  
+  .motivation-card h4 {
+    margin: 6px 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #465a26;
+  }
+  
