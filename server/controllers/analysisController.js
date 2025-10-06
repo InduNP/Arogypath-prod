@@ -1,10 +1,12 @@
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 
-if (!process.env.GEMINI_API_KEY) {
-  console.error('FATAL ERROR: GEMINI_API_KEY is not defined in .env file.');
+const geminiApiKey = process.env.GEMINI_API_KEY;
+if (!geminiApiKey) {
+  console.error('❌ FATAL ERROR: GEMINI_API_KEY is missing. Please set it in environment variables.');
   process.exit(1);
 }
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+
+const genAI = new GoogleGenerativeAI(geminiApiKey);
 
 const fileToGenerativePart = (file) => {
   return {
